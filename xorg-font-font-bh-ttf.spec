@@ -1,21 +1,22 @@
 Summary:	bh-ttf font
 Summary(pl):	Font bh-ttf
 Name:		xorg-font-font-bh-ttf
-Version:	0.99.0
-Release:	0.01
+Version:	0.99.1
+Release:	0.1
 License:	MIT
 Group:		Fonts
-Source0:	http://xorg.freedesktop.org/X11R7.0-RC0/font/font-bh-ttf-%{version}.tar.bz2
-# Source0-md5:	ab5fe2f25544d820897b61b4b73efa9a
+Source0:	http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-bh-ttf-%{version}.tar.bz2
+# Source0-md5:	98ba09761791c7ac31d9fd6baec66f04
 URL:		http://xorg.freedesktop.org/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
+BuildRequires:	fontconfig
 BuildRequires:	pkgconfig >= 1:0.19
-BuildRequires:	xorg-app-bdftopcf
 BuildRequires:	xorg-app-mkfontdir
 BuildRequires:	xorg-app-mkfontscale
-BuildRequires:	xorg-font-font-util
 BuildRequires:	xorg-util-util-macros
+Requires(post,postun):	fontpostinst
+Requires:	%{_fontsdir}/TTF
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -31,7 +32,8 @@ Font bh-ttf.
 %{__aclocal}
 %{__autoconf}
 %{__automake}
-%configure
+%configure \
+	--with-fontdir=%{_fontsdir}/TTF
 
 %{__make}
 
@@ -44,6 +46,13 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+fontpostinst TTF
+
+%postun
+fontpostinst TTF
+
 %files
 %defattr(644,root,root,755)
-%{_libdir}/X11/fonts/TTF/*
+%doc COPYING ChangeLog
+%{_fontsdir}/TTF/*.ttf
