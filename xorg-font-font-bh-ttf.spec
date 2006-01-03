@@ -1,12 +1,12 @@
 Summary:	bh-ttf font
 Summary(pl):	Font bh-ttf
 Name:		xorg-font-font-bh-ttf
-Version:	0.99.1
+Version:	1.0.0
 Release:	0.1
 License:	MIT
 Group:		Fonts
-Source0:	http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-bh-ttf-%{version}.tar.bz2
-# Source0-md5:	98ba09761791c7ac31d9fd6baec66f04
+Source0:	http://xorg.freedesktop.org/releases/X11R7.0/src/font/font-bh-ttf-%{version}.tar.bz2
+# Source0-md5:	ad43cf739b3d46ba1e7dc778a0608a52
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
