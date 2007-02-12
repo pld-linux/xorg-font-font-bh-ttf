@@ -1,5 +1,5 @@
 Summary:	bh-ttf font
-Summary(pl.UTF-8):   Font bh-ttf
+Summary(pl.UTF-8):	Font bh-ttf
 Name:		xorg-font-font-bh-ttf
 Version:	1.0.0
 Release:	0.1
