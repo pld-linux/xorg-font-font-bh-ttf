@@ -1,5 +1,5 @@
 Summary:	bh-ttf font
-Summary(pl):	Font bh-ttf
+Summary(pl.UTF-8):   Font bh-ttf
 Name:		xorg-font-font-bh-ttf
 Version:	1.0.0
 Release:	0.1
@@ -21,7 +21,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 bh-ttf font.
 
-%description -l pl
+%description -l pl.UTF-8
 Font bh-ttf.
 
 %prep
