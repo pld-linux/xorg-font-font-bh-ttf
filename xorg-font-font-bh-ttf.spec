@@ -2,7 +2,7 @@ Summary:	Bigelow & Holmes Luxi font in TrueType format
 Summary(pl.UTF-8):	Font Bigelow & Holmes Luxi w formacie TrueType
 Name:		xorg-font-font-bh-ttf
 Version:	1.0.0
-Release:	1
+Release:	2
 License:	MIT
 Group:		Fonts
 Source0:	http://xorg.freedesktop.org/releases/individual/font/font-bh-ttf-%{version}.tar.bz2
@@ -16,6 +16,7 @@ BuildRequires:	xorg-app-mkfontscale
 BuildRequires:	xorg-util-util-macros
 Requires(post,postun):	fontpostinst
 Requires:	%{_fontsdir}/TTF
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
