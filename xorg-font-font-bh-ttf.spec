@@ -44,7 +44,8 @@ Font Bigelow & Holmes Luxi w formacie TrueType.
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+	DESTDIR=$RPM_BUILD_ROOT \
+	fontconfigdir=/etc/fonts
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -59,5 +60,5 @@ fontpostinst TTF
 %defattr(644,root,root,755)
 %doc COPYING ChangeLog README
 %{_fontsdir}/TTF/luxi*.ttf
-/etc/fonts/conf/conf.avail/42-luxi-mono.conf
-%config(noreplace,missingok) %verify(not link md5 mtime size) /etc/fonts/conf/conf.d/42-luxi-mono.conf
+/etc/fonts/conf.avail/42-luxi-mono.conf
+%config(noreplace,missingok) %verify(not link md5 mtime size) /etc/fonts/conf.d/42-luxi-mono.conf
