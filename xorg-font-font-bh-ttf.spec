@@ -1,19 +1,19 @@
 Summary:	Bigelow & Holmes Luxi font in TrueType format
 Summary(pl.UTF-8):	Font Bigelow & Holmes Luxi w formacie TrueType
 Name:		xorg-font-font-bh-ttf
-Version:	1.0.2
+Version:	1.0.3
 Release:	1
 License:	distributable if unmodified
 Group:		Fonts
 Source0:	http://xorg.freedesktop.org/releases/individual/font/font-bh-ttf-%{version}.tar.bz2
-# Source0-md5:	56e740e42bd47676f16f90871a414900
+# Source0-md5:	e8ca58ea0d3726b94fe9f2c17344be60
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
 BuildRequires:	fontconfig
 BuildRequires:	xorg-app-mkfontdir
 BuildRequires:	xorg-app-mkfontscale
-BuildRequires:	xorg-font-font-util >= 1.1
+BuildRequires:	xorg-font-font-util >= 1.2
 BuildRequires:	xorg-util-util-macros >= 1.3
 Requires(post,postun):	fontpostinst
 Requires:	%{_fontsdir}/TTF
@@ -44,8 +44,7 @@ Font Bigelow & Holmes Luxi w formacie TrueType.
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	fontconfigdir=/etc/fonts
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
