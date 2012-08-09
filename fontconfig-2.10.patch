@@ -1,0 +1,20 @@
+--- font-bh-ttf-1.0.3/Makefile.am~	2010-10-09 01:59:49.000000000 +0200
++++ font-bh-ttf-1.0.3/Makefile.am	2012-08-09 11:46:35.455350161 +0200
+@@ -37,7 +37,7 @@
+ font_DATA = $(FONT_FILES)
+ 
+ actualconfigdir = $(FC_CONFDIR)/conf.d
+-availconfigdir = $(FC_CONFDIR)/conf.avail
++availconfigdir = $(datadir)/fontconfig/conf.avail
+ dist_availconfig_DATA = 42-luxi-mono.conf
+ 
+ EXTRA_DIST = $(FONT_FILES) COPYRIGHT.BH
+@@ -51,7 +51,7 @@
+ 	$(MKFONTDIR) $(DESTDIR)$(fontdir)
+ 	mkdir -p $(DESTDIR)$(actualconfigdir)
+ 	@rm -f $(DESTDIR)$(actualconfigdir)/$(dist_availconfig_DATA)
+-	ln -s ../conf.avail/$(dist_availconfig_DATA) $(DESTDIR)$(actualconfigdir)
++	ln -s $(availconfigdir)/$(dist_availconfig_DATA) $(DESTDIR)$(actualconfigdir)
+ 	@RUN_FCCACHE@
+ 
+ distuninstallcheck:
